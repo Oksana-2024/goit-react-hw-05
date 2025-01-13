@@ -1,7 +1,7 @@
 import { Link, NavLink, Outlet, useLocation, useParams } from "react-router-dom";
-import { fetchMovies } from "../../service/moviedb-api";
 import { useEffect, useRef, useState } from "react";
 import s from "./MovieDetailsPage.module.css";
+import { fetchMovies } from "../../service/moviedb-api";
 
 const MovieDetailsPage = () => {
   const linkActive = ({ isActive }) => (isActive ? s.active : s.linkItem);

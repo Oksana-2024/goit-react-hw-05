@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import MovieList from "../../MovieList/MovieList";
-import { fetchMovies } from "../../../service/moviedb-api";
 import s from "./HomePage.module.css"
+import MovieList from "../../components/MovieList/MovieList";
+import { fetchMovies } from "../../service/moviedb-api";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);

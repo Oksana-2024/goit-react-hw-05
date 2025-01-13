@@ -20,7 +20,7 @@ function App() {
       <Suspense>
         <Routes>
           <Route path="/" element={<pages.Home />} />
-          <Route path="/Movies" element={<pages.Movies />} />
+          <Route path="/movies" element={<pages.Movies />} />
           <Route path="/movies/:movieId" element={<pages.MovieDetails />}>
             <Route path="cast" element={<MovieCast />} />
             <Route path="reviews" element={<MovieReviews />} />
