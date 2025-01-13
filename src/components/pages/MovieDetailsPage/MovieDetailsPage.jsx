@@ -1,9 +1,10 @@
-import { Link, Outlet, useLocation, useParams } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { fetchMovies } from "../../../service/moviedb-api";
 import { useEffect, useRef, useState } from "react";
 import s from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
+  const linkActive = ({ isActive }) => (isActive ? s.active : s.linkItem);
   const { movieId } = useParams();
   const [details, setDetails] = useState();
   const location = useLocation();
@@ -36,6 +37,7 @@ const MovieDetailsPage = () => {
             }
             alt="Poster for the movie"
             width={300}
+            height={440}
           />
 
           <div className={s.descr}>
@@ -54,10 +56,10 @@ const MovieDetailsPage = () => {
       
       <ul className={s.list}>
         <li className={s.linkText}>
-          <Link className={s.linkItem} to="cast">Cast</Link>
+          <NavLink className={linkActive} to="cast">Cast</NavLink>
         </li>
         <li className={s.linkText}>
-          <Link className={s.linkItem} to="reviews">Reviews</Link>
+          <NavLink className={linkActive} to="reviews">Reviews</NavLink>
         </li>
       </ul>
       <Outlet />

@@ -76,3 +76,8 @@
 .linkText {
   margin-bottom: 12px;
 }
+
+.active {
+  color: var(--active);
+  text-decoration: underline;
+}
