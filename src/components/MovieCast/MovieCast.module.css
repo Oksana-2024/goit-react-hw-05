@@ -1,0 +1,25 @@
+.listCast{
+   padding-top: 36px;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 30px;  
+}
+
+.wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cardCast{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
+.character{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
