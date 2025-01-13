@@ -1,5 +1,5 @@
 import { Link, NavLink, Outlet, useLocation, useParams } from "react-router-dom";
-import { fetchMovies } from "../../../service/moviedb-api";
+import { fetchMovies } from "../../service/moviedb-api";
 import { useEffect, useRef, useState } from "react";
 import s from "./MovieDetailsPage.module.css";
 

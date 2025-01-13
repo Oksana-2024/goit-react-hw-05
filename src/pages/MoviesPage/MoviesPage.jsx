@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import {
   fetchMovies,
   search as searchPath,
-} from "../../../service/moviedb-api";
+} from "../../service/moviedb-api";
 import { useSearchParams } from "react-router-dom";
-import MovieList from "../../MovieList/MovieList";
+import MovieList from "../../components/MovieList/MovieList";
 import { toast } from "react-toastify";
 import s from "./MoviesPage.module.css";
 
