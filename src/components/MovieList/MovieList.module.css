@@ -1,0 +1,21 @@
+.listTrend {
+  padding-left: 20px;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  list-style: square;
+}
+
+.item {
+    text-decoration: none;
+  color: var(--black);
+}
+
+.item:visited {
+    color: var(--active);
+  }
