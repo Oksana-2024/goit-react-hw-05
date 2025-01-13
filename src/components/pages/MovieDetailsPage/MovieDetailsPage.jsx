@@ -24,7 +24,7 @@ const MovieDetailsPage = () => {
 
   return (
     <div className={s.box}>
-      <Link to={pathBackRef.current} className={s.back}>
+      <Link to={pathBackRef.current || "/movies"} className={s.back}>
         Go back
       </Link>
       {details && (
