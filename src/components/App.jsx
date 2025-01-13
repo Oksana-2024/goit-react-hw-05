@@ -7,10 +7,10 @@ import "./App.css";
 import { ToastContainer } from "react-toastify";
 
 const pages = {
-  Home: lazy(() => import("./pages/HomePage/HomePage")),
-  Movies: lazy(() => import("./pages/MoviesPage/MoviesPage")),
-  MovieDetails: lazy(() => import("./pages/MovieDetailsPage/MovieDetailsPage")),
-  NotFound: lazy(() => import("./pages/NotFoundPage/NotFoundPage")),
+  Home: lazy(() => import("../pages/HomePage/HomePage")),
+  Movies: lazy(() => import("../pages/MoviesPage/MoviesPage")),
+  MovieDetails: lazy(() => import("../pages/MovieDetailsPage/MovieDetailsPage")),
+  NotFound: lazy(() => import("../pages/NotFoundPage/NotFoundPage")),
 };
 
 function App() {
