@@ -1,3 +1,51 @@
+:root {
+  --black:#0a1330;
+  --active:#092ef2;
+  --first-background:#f2fce0;
+  --olive:#344d03;
+  --main-font: "DM Sans", sans-serif;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("../src/assets/fonts/DMSans-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("../src/assets/fonts/DMSans-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("../src/assets/fonts/DMSans-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("../src/assets/fonts/DMSans-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("../src/assets/fonts/DMSans-MediumItalic.ttf") format("truetype");
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+}
+
 h1,
 h2,
 h3,
@@ -6,15 +54,19 @@ h5,
 h6,
 p {
   margin: 0;
+  font-family: var(--main-font);
 }
 
 ul,
 ol {
   margin: 0;
   padding: 0;
+  font-family: var(--main-font);
+
 }
 
 img {
   display: block;
   max-width: 100%;
 }
+
