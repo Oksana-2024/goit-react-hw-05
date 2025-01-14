@@ -33,7 +33,6 @@ const MoviesPage = () => {
       .catch((error) => {
         console.log(error);
       })
-      .finally();
   }, [search]);
   return (
     <div className={s.form}>

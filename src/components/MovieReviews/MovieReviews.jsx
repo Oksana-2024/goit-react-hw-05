@@ -15,8 +15,7 @@ const MovieReviews = () => {
       .catch((error) => {
         console.log(error);
       })
-      .finally();
-  }, []);
+  }, [movieId]);
 
   return (
     <ul className={s.list}>

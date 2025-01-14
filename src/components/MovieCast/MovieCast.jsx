@@ -17,7 +17,7 @@ const MovieCast = () => {
         console.log(error);
       })
       .finally();
-  }, []);
+  }, [movieId]);
 
   return (
     <ul className={s.listCast}>

@@ -19,8 +19,7 @@ const MovieDetailsPage = () => {
       .catch((error) => {
         console.log(error);
       })
-      .finally();
-  }, []);
+  }, [movieId]);
 
   return (
     <div className={s.box}>

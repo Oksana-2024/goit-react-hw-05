@@ -13,8 +13,8 @@ const HomePage = () => {
       .catch((error) => {
         console.log(error);
       })
-      .finally();
   }, []);
+  
   return (
     <div className={s.container}>
      <h2 className={s.title}> Trending today</h2>
