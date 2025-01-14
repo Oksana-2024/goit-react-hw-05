@@ -8,9 +8,11 @@ import {
 import { useEffect, useRef, useState } from "react";
 import s from "./MovieDetailsPage.module.css";
 import { fetchMovies } from "../../service/moviedb-api";
-import { toast } from "react-toastify";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+
 
 const MovieDetailsPage = () => {
+  const [messageError, setMessageError] = useState(false);
   const linkActive = ({ isActive }) => (isActive ? s.active : s.linkItem);
   const { movieId } = useParams();
   const [details, setDetails] = useState();
@@ -18,15 +20,18 @@ const MovieDetailsPage = () => {
   const pathBackRef = useRef(location.state);
   const defaultImg =
     "https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg";
+
   useEffect(() => {
     fetchMovies(`/movie/${movieId}`)
       .then((response) => {
+        setMessageError(false);
         setDetails(response);
       })
       .catch((error) => {
-        toast.error(error.message);
+        setMessageError(true);
+        console.log(error);
       });
-  }, [movieId]);
+  }, [movieId,messageError]);
 
   return (
     <div className={s.box}>
@@ -72,6 +77,7 @@ const MovieDetailsPage = () => {
           </NavLink>
         </li>
       </ul>
+      <ErrorMessage messageError={messageError} />
       <Outlet />
     </div>
   );
