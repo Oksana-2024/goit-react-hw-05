@@ -1,7 +1,14 @@
-import { Link, NavLink, Outlet, useLocation, useParams } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import s from "./MovieDetailsPage.module.css";
 import { fetchMovies } from "../../service/moviedb-api";
+import { toast } from "react-toastify";
 
 const MovieDetailsPage = () => {
   const linkActive = ({ isActive }) => (isActive ? s.active : s.linkItem);
@@ -17,8 +24,8 @@ const MovieDetailsPage = () => {
         setDetails(response);
       })
       .catch((error) => {
-        console.log(error);
-      })
+        toast.error(error.message);
+      });
   }, [movieId]);
 
   return (
@@ -41,7 +48,7 @@ const MovieDetailsPage = () => {
 
           <div className={s.descr}>
             <h2 className={s.title}>
-              {details.title}{" "}({new Date(details.release_date).getFullYear()})
+              {details.title} ({new Date(details.release_date).getFullYear()})
             </h2>
             <h3 className={s.subtitle}>Overview</h3>
             <p className={s.text}>{details.overview}</p>
@@ -52,13 +59,17 @@ const MovieDetailsPage = () => {
           </div>
         </div>
       )}
-      
+
       <ul className={s.list}>
         <li className={s.linkText}>
-          <NavLink className={linkActive} to="cast">Cast</NavLink>
+          <NavLink className={linkActive} to="cast">
+            Cast
+          </NavLink>
         </li>
         <li className={s.linkText}>
-          <NavLink className={linkActive} to="reviews">Reviews</NavLink>
+          <NavLink className={linkActive} to="reviews">
+            Reviews
+          </NavLink>
         </li>
       </ul>
       <Outlet />
